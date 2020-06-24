@@ -20,8 +20,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: ESLint Action
-        uses: hallee/eslint-action@1.0.3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,4 +29,14 @@ jobs:
       - run: npm test
       - name: Codecov
         uses: codecov/codecov-action@v1.0.7
-  
+  lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+      
+    steps:
+      - uses: actions/checkout@v2
+      - name: ESLint
+        uses: hallee/eslint-action@1.0.3
