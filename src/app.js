@@ -12,7 +12,7 @@ const CACHE_TIMEOUT = 15 * 60;  // 15 minutes
 const PATH_CONTEXT = process.env.PATH_CONTEXT || '/api/graph-images';
 
 // Create the Express app
-const app = express();
+const app = express()
 
 // Start the server
 const server = app.listen(PORT, function() {
